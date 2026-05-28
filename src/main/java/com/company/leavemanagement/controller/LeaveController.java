@@ -2,6 +2,10 @@ package com.company.leavemanagement.controller;
 
 import com.company.leavemanagement.dto.CreateLeaveRequest;
 import com.company.leavemanagement.dto.LeaveResponse;
+import com.company.leavemanagement.service.ApproveLeaveService;
+import com.company.leavemanagement.service.CreateLeaveService;
+import com.company.leavemanagement.service.GetLeaveService;
+import com.company.leavemanagement.service.RejectLeaveService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -3,6 +3,7 @@ package com.company.leavemanagement.entity;
 import com.company.leavemanagement.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
