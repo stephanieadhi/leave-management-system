@@ -31,5 +31,6 @@ public class LeaveRequest {
 
     private String reason;
 
+    @Enumerated(EnumType.STRING)
     private LeaveStatus status;
 }

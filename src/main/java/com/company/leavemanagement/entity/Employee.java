@@ -21,6 +21,7 @@ public class Employee {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     private Integer annualLeaveQuota;
