@@ -26,6 +26,25 @@ public class CreateLeaveService {
         ).orElseThrow(() ->
                 new RuntimeException("Employee not found"));
 
+        if (request.startDate().isAfter(request.endDate())) {
+            throw new RuntimeException(
+                    "Start date cannot be after end date"
+            );
+        }
+
+        boolean hasOverlap =
+                leaveRepository.existsOverlappingLeave(
+                        employee.getId(),
+                        LeaveStatus.APPROVED,
+                        request.startDate(),
+                        request.endDate()
+                );
+
+        if (hasOverlap) {
+            throw new RuntimeException(
+                    "Leave dates overlap existing approved leave"
+            );
+        }
 
         LeaveRequest leave = new LeaveRequest();
 
